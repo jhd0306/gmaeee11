@@ -1,0 +1,157 @@
+:root {
+  --primary: #ff8fa3;
+  --primary-dark: #ff4d6d;
+  --secondary: #ffccd5;
+  --bg-light: #fff5f7;
+  --text-dark: #4a4e69;
+  --white: #ffffff;
+  --error: #ff4d4d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans KR', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+h1, h2, h3, .logo { font-family: 'Fredoka', sans-serif; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; padding: 15px 0; border-bottom: 2px solid var(--secondary); }
+.nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); text-decoration: none; }
+.nav-list { display: flex; list-style: none; align-items: center; gap: 25px; }
+.nav-list a { text-decoration: none; color: var(--text-dark); font-weight: 600; transition: 0.3s; }
+.nav-list a:hover { color: var(--primary); }
+.btn-text { background: none; border: none; color: var(--primary-dark); font-weight: 700; cursor: pointer; font-size: 1rem; }
+
+/* Hero */
+.hero { position: relative; padding: 160px 0 100px; background-image: linear-gradient(rgba(255, 188, 197, 0.5), rgba(255, 188, 197, 0.5)), url('images/hero-bg.png'); background-size: cover; background-position: center; background-attachment: fixed; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.eyebrow { color: var(--primary-dark); font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; }
+.main-title { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+.hero-desc { font-size: 1.1rem; margin-bottom: 30px; }
+.btn { display: inline-block; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; cursor: pointer; border: none; }
+.btn-primary { background: var(--primary-dark); color: white; }
+.btn-secondary { background: white; color: var(--primary-dark); margin-left: 10px; }
+
+/* Floating Cards */
+.hero-visual { position: relative; height: 400px; }
+.hero-card { position: absolute; width: 140px; height: 140px; background: white; border-radius: 25px; padding: 10px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); overflow: hidden; }
+.floating-img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
+.floating { animation: float 4s ease-in-out infinite; }
+.delay-1 { animation-delay: 1s; }
+.delay-2 { animation-delay: 2s; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+/* Collection (도감) */
+.section { padding: 100px 0; }
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-size: 2.5rem; }
+.collection-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
+.collection-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid var(--secondary); text-align: center; transition: 0.3s; cursor: pointer; }
+.collection-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+.card-img-box { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #fff5f7; }
+.card-img-box img { width: 100%; height: 100%; object-fit: contain; padding: 10px; transition: 0.3s; }
+.collection-card:hover .card-img-box img { transform: scale(1.1); }
+.card-info { padding: 20px; }
+.rarity { font-size: 0.7rem; font-weight: 700; background: var(--secondary); color: var(--primary-dark); padding: 2px 10px; border-radius: 10px; }
+.card-info h3 { margin: 10px 0 5px; }
+.card-info p { font-size: 0.9rem; color: #888; }
+
+/* Timeline (스토리) */
+.story-timeline { max-width: 800px; margin: 0 auto; }
+.story-group { margin-bottom: 10px; border-radius: 15px; border: 1px solid var(--secondary); background: white; overflow: hidden; }
+.story-accordion { width: 100%; padding: 20px; text-align: left; background: none; border: none; font-size: 1.2rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
+.story-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+.story-content ul { list-style: none; padding: 10px 20px 20px; }
+.story-content li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+.badge { font-size: 0.75rem; padding: 3px 8px; background: var(--secondary); border-radius: 5px; }
+
+/* Media (유튜브) */
+.media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.media-item { text-decoration: none; color: inherit; transition: 0.3s; }
+.media-item:hover { transform: translateY(-10px); }
+.thumbnail-wrapper { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 15px; }
+.thumb-img { width: 100%; height: 100%; object-fit: cover; }
+.play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+.play-btn { font-size: 3rem; color: white; }
+
+/* Modals */
+.modal-overlay, .video-modal, .image-modal { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); display:none; justify-content:center; align-items:center; z-index: 9999; }
+.modal-content { background: white; padding: 40px; border-radius: 30px; width: 400px; position: relative; }
+.video-modal .modal-container { width: 80%; max-width: 1000px; aspect-ratio: 16/9; position: relative; }
+.video-modal iframe { width: 100%; height: 100%; border-radius: 10px; }
+.image-modal img { max-width: 90%; max-height: 85%; border-radius: 10px; }
+.close-btn, .close-video-btn, .close-image-btn { position: absolute; top: 20px; right: 20px; font-size: 2rem; cursor: pointer; color: white; background: none; border: none; }
+.close-image-btn { color: white; }
+.hidden { display: none; }
+.auth-form .input-group { margin-bottom: 15px; text-align: left; }
+.auth-form input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
+.error-msg { color: red; font-size: 0.7rem; display: none; }
+.input-group.error input { border-color: red; }
+.input-group.error .error-msg { display: block; }
+.full-width { width: 100%; }
+
+/* CTA */
+.cta { background: var(--primary-dark); color: white; text-align: center; }
+.store-btn { display: inline-block; padding: 12px 25px; background: white; color: var(--primary-dark); margin: 10px; border-radius: 10px; text-decoration: none; font-weight: 700; }
+
+/* Hero 섹션: 배경과 글자 레이어 분리 */
+.hero {
+  position: relative;
+  padding: 180px 0 120px;
+  /* 배경 이미지 설정 */
+  background-image: linear-gradient(rgba(255, 188, 197, 0.5), rgba(255, 188, 197, 0.5)), url('images/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2; /* 글자(Text)가 배경보다 위에 오도록 설정 */
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* 떠다니는 카드 레이어: 배경과 글자 사이 혹은 글자 위에 배치 */
+.hero-visual {
+  position: relative;
+  height: 450px;
+  z-index: 1; /* 카드들이 배경보다는 위에, 글자보다는 아래 혹은 적절한 층에 위치 */
+}
+
+.hero-card {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: white;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  overflow: hidden;
+  cursor: pointer;
+  /* 카드들이 겹침을 방지하기 위해 명확한 레이어 설정 */
+  z-index: 3; 
+}
+
+.floating-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 카드 위치 (겹침 방지를 위해 간격 조정) */
+.card-1 { top: 5%; left: 10%; }
+.card-2 { top: 35%; right: 5%; }
+.card-3 { bottom: 10%; left: 15%; }
+
+/* 애니메이션 */
+.floating { animation: float 4s ease-in-out infinite; }
+.delay-1 { animation-delay: 1s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
